@@ -6,7 +6,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
 import sample.idt.tabletgrid.ui.gridsettings.GridSettingsRoute
+import sample.idt.tabletgrid.ui.gridviewer.GridViewerRoute
 
 @Composable
 fun TabletGridNavHost(
@@ -18,9 +20,24 @@ fun TabletGridNavHost(
         startDestination = TabletGridDestination.GridSettings,
         modifier = modifier,
     ) {
-        composable(route = TabletGridDestination.GridSettings) {
+        composable<TabletGridDestination.GridSettings> {
             GridSettingsRoute(
-                onOpenGrid = { _, _ -> },
+                onOpenGrid = { rows, columns ->
+                    navController.navigate(
+                        TabletGridDestination.GridViewer(
+                            rowCount = rows,
+                            columnCount = columns,
+                        )
+                    )
+                },
+            )
+        }
+        composable<TabletGridDestination.GridViewer> { backStackEntry ->
+            val destination = backStackEntry.toRoute<TabletGridDestination.GridViewer>()
+
+            GridViewerRoute(
+                rowCount = destination.rowCount,
+                columnCount = destination.columnCount,
             )
         }
     }

@@ -1,10 +1,12 @@
 package sample.idt.tabletgrid
+
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
 import org.junit.Test
 import sample.idt.tabletgrid.domain.gridsettings.GridSettingsLimits
 import sample.idt.tabletgrid.domain.gridsettings.GridSettingsValidationError
 import sample.idt.tabletgrid.domain.gridsettings.ValidateGridSettingsUseCase
+
 class ValidateGridSettingsUseCaseTest {
 
     private val validateGridSettingsUseCase = ValidateGridSettingsUseCase()
