@@ -24,4 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "TabletGrid"
 include(":app")
- 
+include(":domain")
+include(":data")
+include(":ui")
