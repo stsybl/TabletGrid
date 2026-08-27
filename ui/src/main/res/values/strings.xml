@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grid_settings_title">Grid settings</string>
+    <string name="grid_settings_description">Enter the table size to generate a grid filled with random string data.</string>
+    <string name="grid_settings_rows_helper">Rows: %1$d-%2$d</string>
+    <string name="grid_settings_columns_helper">Columns: %1$d-%2$d</string>
+    <string name="grid_settings_rows_label">Rows</string>
+    <string name="grid_settings_columns_label">Columns</string>
+    <string name="grid_settings_create_button">Create grid</string>
+    <string name="grid_settings_error_invalid_number">Enter a valid number</string>
+    <string name="grid_settings_error_below_minimum">Minimum value is %1$d</string>
+    <string name="grid_settings_error_above_maximum">Maximum value is %1$d</string>
+</resources>
