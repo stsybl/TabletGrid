@@ -3,9 +3,11 @@ package sample.idt.tabletgrid.ui.gridviewer
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import sample.idt.tabletgrid.ui.theme.TabletGridTheme
@@ -19,7 +21,17 @@ fun GridViewerScreen(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background,
     ) {
-        Box(modifier = Modifier.fillMaxSize())
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center,
+        ) {
+            when (state) {
+                GridViewerState.Loading -> CircularProgressIndicator()
+                is GridViewerState.Preview -> {
+
+                }
+            }
+        }
     }
 }
 
@@ -32,10 +44,7 @@ fun GridViewerScreen(
 private fun GridViewerScreenLightPreview() {
     TabletGridTheme(darkTheme = false) {
         GridViewerScreen(
-            state = GridViewerState(
-                rowCount = 100,
-                columnCount = 6,
-            ),
+            state = GridViewerState.Loading,
             onEvent = {},
         )
     }
@@ -51,9 +60,10 @@ private fun GridViewerScreenLightPreview() {
 private fun GridViewerScreenDarkPreview() {
     TabletGridTheme(darkTheme = true) {
         GridViewerScreen(
-            state = GridViewerState(
-                rowCount = 100,
-                columnCount = 6,
+            state = GridViewerState.Preview(
+                rowCount = 2,
+                columnCount = 2,
+                cells = listOf("one", "two", "three", "four"),
             ),
             onEvent = {},
         )
