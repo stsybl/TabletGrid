@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="grid_settings_title">Настройки таблицы</string>
+    <string name="grid_settings_description">Введите размер таблицы, чтобы сгенерировать грид со случайными строковыми данными.</string>
+    <string name="grid_settings_rows_helper">Строки: %1$d-%2$d</string>
+    <string name="grid_settings_columns_helper">Колонки: %1$d-%2$d</string>
+    <string name="grid_settings_rows_label">Строки</string>
+    <string name="grid_settings_columns_label">Колонки</string>
+    <string name="grid_settings_create_button">Создать таблицу</string>
+    <string name="grid_settings_error_invalid_number">Введите корректное число</string>
+    <string name="grid_settings_error_below_minimum">Минимальное значение: %1$d</string>
+    <string name="grid_settings_error_above_maximum">Максимальное значение: %1$d</string>
+    <string name="grid_viewer_title">Просмотр таблицы</string>
+    <string name="grid_viewer_back">Назад</string>
+    <string name="grid_viewer_loading">Подготавливаем таблицу…</string>
+    <string name="grid_viewer_edit_cell">Редактирование ячейки</string>
+    <string name="grid_viewer_edit_cell_position">Строка %1$d, столбец %2$d</string>
+    <string name="grid_viewer_edit_cell_label">Содержимое ячейки</string>
+    <string name="grid_viewer_cancel_cell_edit">Отмена</string>
+    <string name="grid_viewer_save_cell_edit">Сохранить изменения</string>
+    <string name="grid_viewer_description">Сгенерирована таблица: %1$d строк × %2$d столбцов. Нажмите на ячейку, чтобы выбрать её, или нажмите дважды, чтобы изменить содержимое.</string>
+</resources>
