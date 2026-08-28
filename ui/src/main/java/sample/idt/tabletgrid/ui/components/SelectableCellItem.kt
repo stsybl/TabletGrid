@@ -1,12 +1,12 @@
 package sample.idt.tabletgrid.ui.components
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.combinedClickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.selection.toggleable
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -24,16 +24,17 @@ fun SelectableCellItem(
     text: String,
     selected: Boolean,
     onClick: () -> Unit,
+    onDoubleClick: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .heightIn(min = CELL_MIN_HEIGHT)
-            .toggleable(
-                value = selected,
+            .heightIn(min = GridCellHeight)
+            .combinedClickable(
                 role = Role.Checkbox,
-                onValueChange = { onClick() },
+                onClick = onClick,
+                onDoubleClick = onDoubleClick,
             ),
         color = if (selected) {
             MaterialTheme.colorScheme.tertiaryContainer
@@ -74,7 +75,6 @@ fun SelectableCellItem(
     }
 }
 
-private val CELL_MIN_HEIGHT = 56.dp
 private val CELL_HORIZONTAL_PADDING = 16.dp
 private val CELL_BORDER_WIDTH = 1.dp
 private val CELL_TONAL_ELEVATION = 1.dp

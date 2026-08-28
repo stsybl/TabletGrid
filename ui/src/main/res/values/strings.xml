@@ -13,5 +13,10 @@
     <string name="grid_viewer_title">Grid viewer</string>
     <string name="grid_viewer_back">Back</string>
     <string name="grid_viewer_loading">Preparing table…</string>
+    <string name="grid_viewer_edit_cell">Edit cell</string>
+    <string name="grid_viewer_edit_cell_position">Row %1$d, column %2$d</string>
+    <string name="grid_viewer_edit_cell_label">Cell contents</string>
+    <string name="grid_viewer_cancel_cell_edit">Cancel</string>
+    <string name="grid_viewer_save_cell_edit">Save changes</string>
     <string name="grid_viewer_description">Generated table: %1$d rows × %2$d columns. Tap a cell to select it, or double-tap to change its contents.</string>
 </resources>

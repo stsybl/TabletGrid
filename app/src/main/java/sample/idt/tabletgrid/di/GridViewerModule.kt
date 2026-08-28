@@ -17,7 +17,7 @@ val gridViewerModule = module {
     single<GridRepository> {
         GridRepositoryImpl(
             randomTextGenerator = get(),
-            ioDispatcher = get(ioDispatcherQualifier),
+            defaultDispatcher = get(),
         )
     }
     singleOf(::LoadGridDataUseCase)

@@ -30,7 +30,7 @@ class GridRepositoryImplTest {
         )
         val repository = GridRepositoryImpl(
             randomTextGenerator = randomTextGenerator,
-            ioDispatcher = StandardTestDispatcher(testScheduler),
+            defaultDispatcher = StandardTestDispatcher(testScheduler),
         )
 
         val result = async {

@@ -10,13 +10,13 @@ import kotlin.time.Duration.Companion.milliseconds
 
 class GridRepositoryImpl(
     private val randomTextGenerator: RandomTextGenerator,
-    private val ioDispatcher: CoroutineDispatcher,
+    private val defaultDispatcher: CoroutineDispatcher,
 ) : GridRepository {
 
     override suspend fun loadGrid(
         rowCount: Int,
         columnCount: Int,
-    ): List<Cell> = withContext(ioDispatcher) {
+    ): List<Cell> = withContext(defaultDispatcher) {
         delay(GRID_LOADING_DELAY_MILLIS.milliseconds)
 
         List(rowCount * columnCount) { index ->
