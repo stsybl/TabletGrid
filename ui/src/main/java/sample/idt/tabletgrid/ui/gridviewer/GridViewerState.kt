@@ -7,6 +7,6 @@ sealed interface GridViewerState {
     data class Preview(
         val rowCount: Int,
         val columnCount: Int,
-        val cells: List<String>,
+        val cells: List<CellUiModel>,
     ) : GridViewerState
 }

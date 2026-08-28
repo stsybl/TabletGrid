@@ -23,15 +23,12 @@ class RandomTextGeneratorTest {
     }
 
     @Test
-    fun `generate returns five words when maximum words count is selected`() {
+    fun `generate returns two words when maximum words count is selected`() {
         val random = FakeRandom(
             values = listOf(
-                5, // words count
+                2, // words count
                 0,
                 1,
-                2,
-                3,
-                4,
             ),
         )
         val randomTextGenerator = RandomTextGenerator(random)
@@ -39,7 +36,7 @@ class RandomTextGeneratorTest {
         val result = randomTextGenerator.generate()
 
         assertEquals(
-            "apple table green water house",
+            "apple table",
             result,
         )
     }
@@ -48,10 +45,9 @@ class RandomTextGeneratorTest {
     fun `generate returns expected words for selected random values`() {
         val random = FakeRandom(
             values = listOf(
-                3,  // words count
+                2,  // words count
                 10, // dream
                 20, // beach
-                30, // forest
             ),
         )
         val randomTextGenerator = RandomTextGenerator(random)
@@ -59,7 +55,7 @@ class RandomTextGeneratorTest {
         val result = randomTextGenerator.generate()
 
         assertEquals(
-            "dream beach forest",
+            "dream beach",
             result,
         )
     }
@@ -68,8 +64,7 @@ class RandomTextGeneratorTest {
     fun `generate allows repeated words`() {
         val random = FakeRandom(
             values = listOf(
-                3, // words count
-                0,
+                2, // words count
                 0,
                 0,
             ),
@@ -79,7 +74,7 @@ class RandomTextGeneratorTest {
         val result = randomTextGenerator.generate()
 
         assertEquals(
-            "apple apple apple",
+            "apple apple",
             result,
         )
     }
@@ -88,10 +83,9 @@ class RandomTextGeneratorTest {
     fun `generate separates words with single spaces`() {
         val random = FakeRandom(
             values = listOf(
-                3,
+                2,
                 0,
                 1,
-                2,
             ),
         )
         val randomTextGenerator = RandomTextGenerator(random)
@@ -99,7 +93,7 @@ class RandomTextGeneratorTest {
         val result = randomTextGenerator.generate()
 
         assertEquals(
-            "apple table green",
+            "apple table",
             result,
         )
     }

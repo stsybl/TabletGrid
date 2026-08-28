@@ -10,4 +10,8 @@
     <string name="grid_settings_error_invalid_number">Enter a valid number</string>
     <string name="grid_settings_error_below_minimum">Minimum value is %1$d</string>
     <string name="grid_settings_error_above_maximum">Maximum value is %1$d</string>
+    <string name="grid_viewer_title">Grid viewer</string>
+    <string name="grid_viewer_back">Back</string>
+    <string name="grid_viewer_loading">Preparing table…</string>
+    <string name="grid_viewer_description">Generated table: %1$d rows × %2$d columns. Tap a cell to select it, or double-tap to change its contents.</string>
 </resources>

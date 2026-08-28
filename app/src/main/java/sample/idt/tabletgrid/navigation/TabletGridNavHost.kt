@@ -38,6 +38,7 @@ fun TabletGridNavHost(
             GridViewerRoute(
                 rowCount = destination.rowCount,
                 columnCount = destination.columnCount,
+                onBack = navController::navigateUp,
             )
         }
     }

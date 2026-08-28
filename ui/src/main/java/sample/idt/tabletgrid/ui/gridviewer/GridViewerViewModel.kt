@@ -30,7 +30,28 @@ class GridViewerViewModel(
     }
 
     fun onEvent(event: GridViewerEvent) {
+        when (event) {
+            is GridViewerEvent.CellClicked -> processCellClick(event.id)
+            GridViewerEvent.BackClicked -> processBackClick()
+        }
+    }
 
+    private fun processCellClick(id: Int) {
+        val currentState = state.value as? GridViewerState.Preview ?: return
+
+        _state.value = currentState.copy(
+            cells = currentState.cells.map { cell ->
+                if (cell.id == id) {
+                    cell.copy(selected = !cell.selected)
+                } else {
+                    cell
+                }
+            },
+        )
+    }
+
+    private fun processBackClick() {
+        actionChannel.trySend(GridViewerAction.NavigateBack)
     }
 
     private fun loadGrid(
@@ -42,6 +63,13 @@ class GridViewerViewModel(
                 rowCount = rowCount,
                 columnCount = columnCount,
             )
+                .map { cell ->
+                    CellUiModel(
+                        id = cell.id,
+                        text = cell.text,
+                        selected = false,
+                    )
+                }
             _state.value = GridViewerState.Preview(
                 rowCount = rowCount,
                 columnCount = columnCount,

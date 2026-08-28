@@ -4,6 +4,7 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import sample.idt.tablegrid.data.RandomTextGenerator
+import sample.idt.tabletgrid.domain.gridviewer.Cell
 import sample.idt.tabletgrid.domain.gridviewer.GridRepository
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -15,11 +16,14 @@ class GridRepositoryImpl(
     override suspend fun loadGrid(
         rowCount: Int,
         columnCount: Int,
-    ): List<String> = withContext(ioDispatcher) {
+    ): List<Cell> = withContext(ioDispatcher) {
         delay(GRID_LOADING_DELAY_MILLIS.milliseconds)
 
-        List(rowCount * columnCount) {
-            randomTextGenerator.generate()
+        List(rowCount * columnCount) { index ->
+            Cell(
+                id = index,
+                text = randomTextGenerator.generate(),
+            )
         }
     }
 

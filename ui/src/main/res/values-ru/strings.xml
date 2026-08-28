@@ -10,4 +10,8 @@
     <string name="grid_settings_error_invalid_number">Введите корректное число</string>
     <string name="grid_settings_error_below_minimum">Минимальное значение: %1$d</string>
     <string name="grid_settings_error_above_maximum">Максимальное значение: %1$d</string>
+    <string name="grid_viewer_title">Просмотр таблицы</string>
+    <string name="grid_viewer_back">Назад</string>
+    <string name="grid_viewer_loading">Подготавливаем таблицу…</string>
+    <string name="grid_viewer_description">Сгенерирована таблица: %1$d строк × %2$d столбцов. Нажмите на ячейку, чтобы выбрать её, или нажмите дважды, чтобы изменить содержимое.</string>
 </resources>

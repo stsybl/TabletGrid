@@ -10,20 +10,21 @@ import org.junit.Assert.assertFalse
 import org.junit.Test
 import sample.idt.tablegrid.data.RandomTextGenerator
 import sample.idt.tabletgrid.data.gridviewer.GridRepositoryImpl
+import sample.idt.tabletgrid.domain.gridviewer.Cell
 import kotlin.random.Random
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class GridRepositoryImplTest {
 
     @Test
-    fun `loads generated text for every grid cell after delay`() = runTest {
+    fun `loads one or two generated words for every grid cell after delay`() = runTest {
         val randomTextGenerator = RandomTextGenerator(
             random = FakeRandom(
                 values = listOf(
                     1, 0,
-                    1, 1,
-                    1, 2,
+                    2, 1, 2,
                     1, 3,
+                    2, 4, 5,
                 ),
             ),
         )
@@ -44,7 +45,12 @@ class GridRepositoryImplTest {
 
         assertEquals(2_000L, testScheduler.currentTime)
         assertEquals(
-            listOf("apple", "table", "green", "water"),
+            listOf(
+                Cell(id = 0, text = "apple"),
+                Cell(id = 1, text = "table green"),
+                Cell(id = 2, text = "water"),
+                Cell(id = 3, text = "house cloud"),
+            ),
             result.await(),
         )
     }

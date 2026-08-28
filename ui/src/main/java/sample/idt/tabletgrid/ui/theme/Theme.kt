@@ -12,6 +12,8 @@ private val LightColorScheme = lightColorScheme(
     secondary = LightThemeSecondary,
     secondaryContainer = LightThemeSecondaryContainer,
     tertiary = LightThemeTertiary,
+    tertiaryContainer = LightThemeTertiaryContainer,
+    onTertiaryContainer = LightThemeOnTertiaryContainer,
     error = LightThemeError,
 )
 
@@ -21,6 +23,8 @@ private val DarkColorScheme = darkColorScheme(
     secondary = DarkThemeSecondary,
     secondaryContainer = DarkThemeSecondaryContainer,
     tertiary = DarkThemeTertiary,
+    tertiaryContainer = DarkThemeTertiaryContainer,
+    onTertiaryContainer = DarkThemeOnTertiaryContainer,
     error = DarkThemeError,
 )
 

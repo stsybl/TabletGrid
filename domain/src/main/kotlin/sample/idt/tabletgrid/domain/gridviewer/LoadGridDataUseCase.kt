@@ -6,7 +6,7 @@ class LoadGridDataUseCase(
     suspend fun invoke(
         rowCount: Int,
         columnCount: Int,
-    ): List<String> {
+    ): List<Cell> {
         return gridRepository.loadGrid(
             rowCount = rowCount,
             columnCount = columnCount,

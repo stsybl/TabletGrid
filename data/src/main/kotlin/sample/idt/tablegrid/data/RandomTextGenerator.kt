@@ -32,7 +32,7 @@ class RandomTextGenerator(
     private companion object {
 
         const val MIN_WORDS = 1
-        const val MAX_WORDS = 5
+        const val MAX_WORDS = 2
 
         val WORDS = listOf(
             "apple",

@@ -5,5 +5,5 @@ interface GridRepository {
     suspend fun loadGrid(
         rowCount: Int,
         columnCount: Int,
-    ): List<String>
+    ): List<Cell>
 }
